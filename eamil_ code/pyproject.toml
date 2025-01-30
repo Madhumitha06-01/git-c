@@ -1,0 +1,20 @@
+[project]
+name = "email_auto_responder_flow"
+version = "0.1.0"
+description = "email_auto_responder_flow using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.86.0,<1.0.0"
+]
+
+[project.scripts]
+email_auto_responder_flow = "email_auto_responder_flow.main:run"
+run_crew = "email_auto_responder_flow.main:run"
+train = "email_auto_responder_flow.main:train"
+replay = "email_auto_responder_flow.main:replay"
+test = "email_auto_responder_flow.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
