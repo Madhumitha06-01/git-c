@@ -1,0 +1,19 @@
+email_generator:
+  type: openai
+  api_key: "env:OPENAI_API_KEY"
+  instructions: "Generate a professional email based on the given topic."
+  role: "email_content_agent"  # Define the agent's role
+  goal: "Generate email content for proposals based on the given topic."  # Clear goal for the agent
+  backstory: "You are an AI assistant that helps generate professional email content for various purposes, including proposals. Ensure to include an introduction, benefits, and next steps."  # Backstory explaining the agent's purpose
+
+email_sender_agent:
+  type: gmail
+  api_resource: "env:GMAIL_API_RESOURCE"  # Define how the Gmail API resource is fetched
+  instructions: "Send the generated email to the specified recipients after validation."
+  role: "email_sender_agent"  # Role of this agent in the system
+  goal: "Send the generated email content to the specified email recipients."
+  backstory: "You are an AI assistant that sends email content to the specified recipients. Ensure to validate the recipients' email addresses before sending."
+  input_fields:
+    - "generated_email"  # The email content that needs to be sent
+    - "recipients"  # List of recipients' email addresses
+  expected_output: "send_status"  # Expected output indicating whether the email was successfully sent or not

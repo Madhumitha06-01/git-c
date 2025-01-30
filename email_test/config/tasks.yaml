@@ -1,0 +1,24 @@
+generate_email_task:
+  description: "This task generates an email based on the provided proposal topic."
+  instructions: "Generate email content based on the given topic."
+  input_fields:
+    - "topic"
+  output_fields:
+    - "generated_email"
+
+preview_email_task:
+  description: "This task previews the generated email content."
+  instructions: "Preview the generated email content."
+  input_fields:
+    - "generated_email"
+  output_fields:
+    - "generated_email"
+
+send_email_task:
+  description: "This task sends the email to the specified recipients after validation."
+  instructions: "Send the email to the specified recipients after validation."
+  input_fields:
+    - "generated_email"
+    - "recipients"
+  output_fields:
+    - "send_status"
