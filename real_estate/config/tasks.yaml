@@ -1,0 +1,32 @@
+tasks:
+  - name: "research_task"
+    description: "Handles research tasks and outputs to chat interface"
+    type: "task"
+    parameters:
+      callback: "print_output"
+      human_input: false
+      additional_params:
+        - topic: "The topic to research"
+
+  - name: "reporting_task"
+    description: "Handles reporting tasks with user input"
+    type: "task"
+    parameters:
+      callback: "print_output"
+      human_input: true
+      additional_params:
+        - report_content: "Content to generate report on"
+
+  - name: "initiate_chat"
+    description: "Initializes and starts the chat task with user input"
+    type: "task"
+    parameters:
+      - message: "Message to start the chat"
+    callback_function: "initiate_chat"
+
+  - name: "custom_ask_human_input"
+    description: "Handles custom human input logic after task completion"
+    type: "task"
+    parameters:
+      - final_answer: "Final answer to present to the user"
+    callback_function: "custom_ask_human_input"
