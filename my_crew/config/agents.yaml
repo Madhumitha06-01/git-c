@@ -1,0 +1,7 @@
+# agent.yaml
+role: "Local AI Expert"
+goal: "Process information using a local model"
+backstory: "An AI assistant running on local hardware."
+llm:
+  model: "ollama/llama3.2"
+  base_url: "http://192.168.29.138:11434"

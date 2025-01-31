@@ -1,0 +1,12 @@
+# task.yaml
+task:
+  name: "Process Data"
+  description: "The task involves processing input data using the local model and generating a response."
+  inputs:
+    - type: "text"
+      name: "User Input"
+      description: "The information that needs to be processed by the agent."
+  outputs:
+    - type: "text"
+      name: "Processed Output"
+      description: "The generated response from the agent after processing the input."
